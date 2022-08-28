@@ -1,0 +1,45 @@
+
+.main{
+  display:inline-flex;
+  padding:20px;
+  background-color: #F7FFF7;
+}
+
+.appHeader {
+  text-align: center;
+  display:flex;
+  padding: 20px;
+  background-color: #4ECDC4;
+  align-items: center;
+}
+.headerTitle{
+  color: #001021;
+  font-weight: bold;
+  font-size: 30px;
+}
+.headerTitle2{
+  color: #F7FFF7;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.exportBtn {
+  position:absolute;
+  margin-right: 10px;
+  right:0;
+}
+
+.previewDiv{
+  display:block;
+}
+.prevTitle{
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.editingDiv{
+  display:block;
+  position:absolute;
+  margin-right: 10px;
+  right:0;
+}
