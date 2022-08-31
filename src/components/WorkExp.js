@@ -7,6 +7,14 @@ class WorkExp extends Component {
 
   idExp = 0;
 
+  addWorkExp = () => {
+    console.log("33")
+    return {
+      // <div> {Hello, world!} </div>
+    }
+  }
+
+
   render() {
     return (
       <div className="workExpDiv">
@@ -19,7 +27,13 @@ class WorkExp extends Component {
               // onChange={this.addressChange.bind(this)}
               id={this.idExp}
             />
+            {/* {id !== 0 && 
+              <button> delete </button>
+            } */}
           </div>
+          
+          <button className="addBtn" onClick={this.addWorkExp}>Add</button>
+          
 
           <PreviewSide 
                   title= {this.idExp}

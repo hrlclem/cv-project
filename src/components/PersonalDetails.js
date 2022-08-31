@@ -8,10 +8,17 @@ import data from '../data.js';
 class PersoDetails extends Component {
 
 
-    nameChange = (e) => data.intro.name = e.target.value;
-    addressChange = (e) => data.intro.address = e.target.value;
+    nameChange(e){
+      data.intro.name = e.target.value;
+      this.forceUpdate();
+    }
 
+    addressChange(e){
+      data.intro.address = e.target.value;
+      this.forceUpdate();
+    }
 
+    
   render() {
 
     return (
@@ -24,7 +31,6 @@ class PersoDetails extends Component {
             className="nameInput" 
             name="name"
             defaultValue= {data.intro.name || ''}
-            // value={data.intro.name || ''}
             onChange={this.nameChange.bind(this)}
             id="nameInput"
           />
@@ -36,7 +42,6 @@ class PersoDetails extends Component {
             className="addressInput" 
             name="address"
             defaultValue= {data.intro.address || ''}
-            // value={data.intro.address || ''}
             onChange={this.addressChange.bind(this)}
             id="addressInput"
           />
@@ -46,11 +51,6 @@ class PersoDetails extends Component {
         <PreviewSide 
                   name= {data.intro.name}
                   address= {data.intro.address}
-                  // mail= {perso.mail}
-                  // number= {perso.number}
-                  // linkedin= {perso.linkedin}
-                  // otherLink= {perso.otherLink}
-                  // description= {perso.description}
         />  
 
       </div>
