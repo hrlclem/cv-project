@@ -33,12 +33,6 @@ class WorkExp extends Component {
           </div>
           
           <button className="addBtn" onClick={this.addWorkExp}>Add</button>
-          
-
-          <PreviewSide 
-                  title= {this.idExp}
-          />  
-          
       </div>
       
 

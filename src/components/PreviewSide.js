@@ -10,7 +10,7 @@ class PreviewSide extends Component {
         <div className="previewSide">
             <div className="persoDetailsDiv">
                     <div className="namePrev">{data.intro.name}</div>  
-                    <div className="addressPrev">{this.props.address}</div>            
+                    <div className="addressPrev">{data.intro.address}</div>            
             </div>
 
             <div className="workExpPreviewDiv">

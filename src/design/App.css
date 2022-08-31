@@ -23,6 +23,10 @@
   font-size: 30px;
 }
 
+.sectionTitle{
+  font-weight: bold;
+}
+
 .exportBtn {
   position:absolute;
   margin-right: 10px;
