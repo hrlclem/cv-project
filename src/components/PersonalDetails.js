@@ -20,7 +20,6 @@ class PersoDetails extends Component {
 
     
   render() {
-
     return (
       
       <div className='personalDetailsDiv'>
@@ -49,8 +48,8 @@ class PersoDetails extends Component {
 
 
         <PreviewSide 
-                  name= {data.intro.name}
-                  address= {data.intro.address}
+            name= {data.intro.name}
+            address= {data.intro.address}
         />  
 
       </div>

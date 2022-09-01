@@ -11,9 +11,24 @@ const data = {
         otherLink: 'testOther',
         description: 'testDescription'
       },
-      workExp: [],
-      education: [],
+      workingExp: [],
+      educationExp: [],
 }
 
-export default data;
+  export default data;
 
+  // workExp: {
+  //   wordId: '',
+  //   titleWork: '',
+  //   companyWork: '',
+  //   startWork: '',
+  //   endWork: '',
+  //   descriptionWork: '',
+  // },
+  // education: {
+  //   eduId: 'testIdEdu',
+  //   titleEdu: 'testEdu',
+  //   institutEdu: 'testInstit',
+  //   yearStartEdu: 'testYearS',
+  //   yearEndEdu: 'testYearE',
+  //   descriptionEdu: 'testDescrip',

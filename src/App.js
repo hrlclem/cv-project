@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import './design/App.css';
 import Header from './components/Header.js';
 import EditSide from './components/EditSide.js';
-import PreviewSide from './components/PreviewSide.js';
+// import PreviewSide from './components/PreviewSide.js';
+// import data from './data.js';
 
 
 class App extends Component {
@@ -12,7 +13,6 @@ class App extends Component {
       <div className="App">
           <Header />
           <EditSide />
-          {/* <PreviewSide /> */}
       </div>
       );  
     }
