@@ -36,7 +36,6 @@ class WorkExp extends Component {
       } else {
         this.setState({ [e.target.name]: e.target.value });
       }
-      console.log(workExp)
     };
 
 
@@ -58,6 +57,7 @@ class WorkExp extends Component {
       }));
     };
 
+  // Delete fields
       deleteInputs = index => {
         this.setState({
           workExpArray: this.state.workExpArray.filter(
@@ -72,15 +72,15 @@ class WorkExp extends Component {
         });
       }
 
+  // Submit input values for display
       displayInput = e => {
-        console.log("yes")
-        let newEdu = this.state.workExpArray;
-        console.log(newEdu);
-        // this.state.workExpArray.push(data.workingExp)
-        // console.log(data.workingExp);
+        // e.preventDefault();    <=== THIS IS THE ISSUE
+        let workExp = [...this.state.workExpArray]
+        console.log(workExp);
+        workExp.push(data.workingExp);
+        console.log(data);
         return false;
       }
-
 
   render() {
 
@@ -89,12 +89,12 @@ class WorkExp extends Component {
     return (
 
       <div className="workExpDiv">
-        <form onChange={this.handleChange}>
+        <form onSubmit={this.displayInput} onChange={this.handleChange}>
               <div className="container">
-                  < CreateWorkExp
+                  <CreateWorkExp
                     add={this.addNewFields}
                     delete={this.clickOnDelete.bind(this)}
-                    onClick={this.displayInput.bind(this)}
+                    displayInput={this.displayInput.bind(this)}
                     workExpArray={workExpArray}
                   />
               </div>

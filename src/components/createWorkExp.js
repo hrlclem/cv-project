@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import data from "../data";
+import React from "react";
 
 const CreateWorkExp = props => {
         return props.workExpArray.map((val, idx) => {
@@ -80,7 +79,7 @@ const CreateWorkExp = props => {
                         </button>
                         <button
                             className="btn btn-danger"
-                            onClick={() => props.onClick(val)}
+                            onClick={() => props.displayInput(val)}
                             >
                             Display
                         </button>
@@ -96,7 +95,7 @@ const CreateWorkExp = props => {
                     </button>
                     <button
                         className="btn btn-danger"
-                        onClick={() => props.onClick(val)}
+                        onClick={() => props.displayInput(val)}
                         >
                         Display
                     </button>

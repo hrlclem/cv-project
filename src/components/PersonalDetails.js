@@ -10,12 +10,12 @@ class PersoDetails extends Component {
 
     nameChange(e){
       data.intro.name = e.target.value;
-      this.forceUpdate();
+      // this.forceUpdate();
     }
 
     addressChange(e){
       data.intro.address = e.target.value;
-      this.forceUpdate();
+      // this.forceUpdate();
     }
 
     
