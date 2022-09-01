@@ -18,6 +18,7 @@ class WorkExp extends Component {
           startWork: '',
           endWork: '',
           descriptionWork: '',
+          submitted: false,
         }
       ]
   };
@@ -25,27 +26,22 @@ class WorkExp extends Component {
 
 // Manage all inputs
     handleChange = e => {
-      console.log(1)
-
+      let workExp = [...this.state.workExpArray];
       if (
         ["titleWork", "companyWork", "startWork", "endWork", "descriptionWork"].includes(
           e.target.name
         )
       ) {
-        let workExpArray = [...this.state.workExpArray];
-        workExpArray[e.target.dataset.id][e.target.name] = e.target.value;
+        workExp[e.target.dataset.id][e.target.name] = e.target.value;
       } else {
         this.setState({ [e.target.name]: e.target.value });
       }
-
-      console.log(this.state)
+      console.log(workExp)
     };
 
 
 // Add new workFields
     addNewFields = e => {
-      console.log(2)
-
       this.setState(prevState => ({
         workExpArray: [
           ...prevState.workExpArray,
@@ -56,6 +52,7 @@ class WorkExp extends Component {
             startWork: '',
             endWork: '',
             descriptionWork: '',
+            submitted: false,
           }
         ]
       }));
@@ -69,10 +66,19 @@ class WorkExp extends Component {
         });
       };
 
-      clickOnDelete(record) {
+      clickOnDelete = record => {
         this.setState({
           workExpArray: this.state.workExpArray.filter(r => r !== record)
         });
+      }
+
+      displayInput = e => {
+        console.log("yes")
+        let newEdu = this.state.workExpArray;
+        console.log(newEdu);
+        // this.state.workExpArray.push(data.workingExp)
+        // console.log(data.workingExp);
+        return false;
       }
 
 
@@ -83,11 +89,12 @@ class WorkExp extends Component {
     return (
 
       <div className="workExpDiv">
-        <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
+        <form onChange={this.handleChange}>
               <div className="container">
                   < CreateWorkExp
                     add={this.addNewFields}
                     delete={this.clickOnDelete.bind(this)}
+                    onClick={this.displayInput.bind(this)}
                     workExpArray={workExpArray}
                   />
               </div>

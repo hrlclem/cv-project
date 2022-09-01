@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import data from "../data";
 
 const CreateWorkExp = props => {
         return props.workExpArray.map((val, idx) => {
@@ -18,7 +19,7 @@ const CreateWorkExp = props => {
                   type="text"
                   className="form-control required"
                   placeholder="Title"
-                  name="title"
+                  name="titleWork"
                   data-id={idx}
                   id={titleWork}
                 />
@@ -29,7 +30,7 @@ const CreateWorkExp = props => {
                   type="text"
                   className="form-control required"
                   placeholder="Company"
-                  name="company"
+                  name="companyWork"
                   id={companyWork}
                   data-id={idx}
                 />
@@ -40,7 +41,7 @@ const CreateWorkExp = props => {
                   type="date"
                   className="form-control"
                   placeholder="Start Date"
-                  name="startDate"
+                  name="startWork"
                   id={startWork}
                   data-id={idx}
                 />
@@ -51,7 +52,7 @@ const CreateWorkExp = props => {
                   type="date"
                   className="form-control"
                   placeholder="End Date"
-                  name="endDate"
+                  name="endWork"
                   id={endWork}
                   data-id={idx}
                 />
@@ -62,27 +63,51 @@ const CreateWorkExp = props => {
                   type="text"
                   className="form-control"
                   placeholder="Description"
-                  name="description"
+                  name="descriptionWork"
                   id={descriptionWork}
                   data-id={idx}
                 />
               </div>
               <div className="col p-4">
                 {idx === 0 ? (
-                  <button
-                    onClick={() => props.add()}
-                    type="button"
-                    className="btn btn-primary text-center"
-                  >
-                    <i className="fa fa-plus-circle" aria-hidden="true" />
-                  </button>
+                    <div className="buttons">
+                        <button
+                            onClick={() => props.add()}
+                            type="button"
+                            className="btn btn-primary text-center"
+                            >
+                            Add
+                        </button>
+                        <button
+                            className="btn btn-danger"
+                            onClick={() => props.onClick(val)}
+                            >
+                            Display
+                        </button>
+                        </div>
                 ) : (
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => props.delete(val)}
-                  >
-                    <i className="fa fa-minus" aria-hidden="true" />
-                  </button>
+                    <div className="buttons">
+                        <button
+                        onClick={() => props.add()}
+                        type="button"
+                        className="btn btn-primary text-center"
+                        >
+                        Add
+                    </button>
+                    <button
+                        className="btn btn-danger"
+                        onClick={() => props.onClick(val)}
+                        >
+                        Display
+                    </button>
+                    <button
+                        className="btn btn-danger"
+                        onClick={() => props.delete(val)}
+                        >
+                        Delete
+                    </button>
+                  </div>
+
                 )}
               </div>
             </div>
