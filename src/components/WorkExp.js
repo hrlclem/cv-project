@@ -3,7 +3,6 @@ import CreateWorkExp from './createWorkExp.js';
 import data from '../data.js';
 
 
-
 class WorkExp extends Component {
 
   constructor() {
@@ -23,6 +22,7 @@ class WorkExp extends Component {
       ]
   };
 };
+
 
 // Manage all inputs
     handleChange = e => {
@@ -74,11 +74,8 @@ class WorkExp extends Component {
 
   // Submit input values for display
       displayInput = e => {
-        // e.preventDefault();    <=== THIS IS THE ISSUE
         let workExp = [...this.state.workExpArray]
-        console.log(workExp);
-        workExp.push(data.workingExp);
-        console.log(data);
+        data.workingExp.push(...workExp);
         return false;
       }
 
@@ -89,7 +86,7 @@ class WorkExp extends Component {
     return (
 
       <div className="workExpDiv">
-        <form onSubmit={this.displayInput} onChange={this.handleChange}>
+        <div onSubmit={this.displayInput} onChange={this.handleChange}>
               <div className="container">
                   <CreateWorkExp
                     add={this.addNewFields}
@@ -98,7 +95,14 @@ class WorkExp extends Component {
                     workExpArray={workExpArray}
                   />
               </div>
-        </form>
+        </div>
+
+        {/* //IN TEST */}
+        {/* {data.workingExp.map((list,i) => {
+          return(
+            <div>{list.titleWork}+{i}</div>
+          )
+        })} */}
       </div>
 
     )
